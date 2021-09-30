@@ -15,12 +15,13 @@
                                     <th>ID</th>
                                     <th>Nom</th>
                                     <th>Description</th>
-                                    <th>Price</th>
+                                    <th>Prix</th>
                                     <th>Stock</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+
                                 @foreach($produits as $product)
                                     <tr>
                                         <td>{{$product->id }}</td>
@@ -29,12 +30,13 @@
                                         <td>{{$product->price}}</td>
                                         <td>{{$product->stock}}</td>
                                         <td>
-                                            <a href="{{ route('produits.show',$product->id) }}">Show</a>
-                                            <a href="{{ route('produits.edit',$product->id) }}">Edit</a>
+
+                                            <a class="btn btn-outline-primary" href="{{ route('produits.show',$product->id) }}">Monter</a>
+                                            <a class="btn btn-outline-success" href="{{ route('produits.edit',$product->id) }}">Modifier</a>
                                             <form action="{{ route('produits.destroy',$product->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit">Delete</button>
+                                                <button type="submit" class="btn btn-outline-danger">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

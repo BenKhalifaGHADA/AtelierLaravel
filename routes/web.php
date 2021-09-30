@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,5 +21,9 @@ Route::get('/', function () {
 
 Route::get('/admin', function () {
     return view('admin.dashboard');
-});
+})->name('admin');
+Route::get('module',[\App\Http\Controllers\ModuleController::class,'affiche']);
 Route::resource('produits', ProductController::class);
+Route::resource('categories', CategoryController::class);
+
+
