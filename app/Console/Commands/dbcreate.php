@@ -37,6 +37,10 @@ class dbcreate extends Command
      */
     public function handle()
     {
+<<<<<<< HEAD
         return 0;
+=======
+
+>>>>>>> 38da87dde38898af28b61e328133658b9f59a6c9
     }
 }
