@@ -44,57 +44,33 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="nav-item active  ">
-                    <a class="nav-link" href="./dashboard.html">
+                    <a class="nav-link" href="{{route('admin')}}">
                         <i class="material-icons">dashboard</i>
                         <p>Dashboard</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="./user.html">
-                        <i class="material-icons">person</i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./tables.html">
-                        <i class="material-icons">content_paste</i>
-                        <p>Table List</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./typography.html">
+                    <a class="nav-link" href="{{ route('produits.index')}}">
                         <i class="material-icons">library_books</i>
-                        <p>Typography</p>
+                        <p>Liste des produits</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="./icons.html">
-                        <i class="material-icons">bubble_chart</i>
-                        <p>Icons</p>
+                    <a class="nav-link" href="{{route('produits.create')}}">
+                        <i class="material-icons">library_books</i>
+                        <p>Ajouter un produit</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="./map.html">
-                        <i class="material-icons">location_ons</i>
-                        <p>Maps</p>
+                    <a class="nav-link" href="{{route('categories.index')}}">
+                        <i class="material-icons">library_books</i>
+                        <p>Liste des catégories</p>
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="./notifications.html">
-                        <i class="material-icons">notifications</i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./rtl.html">
-                        <i class="material-icons">language</i>
-                        <p>RTL Support</p>
-                    </a>
-                </li>
-                <li class="nav-item active-pro ">
-                    <a class="nav-link" href="./upgrade.html">
-                        <i class="material-icons">unarchive</i>
-                        <p>Upgrade to PRO</p>
+                    <a class="nav-link" href="{{route('categories.create')}}">
+                        <i class="material-icons">library_books</i>
+                        <p>Ajouter une catégorie</p>
                     </a>
                 </li>
             </ul>
@@ -208,74 +184,7 @@ The above copyright notice and this permission notice shall be included in all c
         </footer>
     </div>
 </div>
-<div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-        <a href="#" data-toggle="dropdown">
-            <i class="fa fa-cog fa-2x"> </i>
-        </a>
-        <ul class="dropdown-menu">
-            <li class="header-title"> Sidebar Filters</li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger active-color">
-                    <div class="badge-colors ml-auto mr-auto">
-                        <span class="badge filter badge-purple" data-color="purple"></span>
-                        <span class="badge filter badge-azure" data-color="azure"></span>
-                        <span class="badge filter badge-green" data-color="green"></span>
-                        <span class="badge filter badge-warning" data-color="orange"></span>
-                        <span class="badge filter badge-danger" data-color="danger"></span>
-                        <span class="badge filter badge-rose active" data-color="rose"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="header-title">Images</li>
-            <li class="active">
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-1.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-2.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-3.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="../assets/img/sidebar-4.jpg" alt="">
-                </a>
-            </li>
-            <li class="button-container">
-                <a href="https://www.creative-tim.com/product/material-dashboard" target="_blank" class="btn btn-primary btn-block">Free Download</a>
-            </li>
-            <!-- <li class="header-title">Want more components?</li>
-                <li class="button-container">
-                    <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
-                      Get the pro version
-                    </a>
-                </li> -->
-            <li class="button-container">
-                <a href="https://demos.creative-tim.com/material-dashboard/docs/2.1/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block">
-                    View Documentation
-                </a>
-            </li>
-            <li class="button-container github-star">
-                <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
-            </li>
-            <li class="header-title">Thank you for 95 shares!</li>
-            <li class="button-container text-center">
-                <button id="twitter" class="btn btn-round btn-twitter"><i class="fa fa-twitter"></i> &middot; 45</button>
-                <button id="facebook" class="btn btn-round btn-facebook"><i class="fa fa-facebook-f"></i> &middot; 50</button>
-                <br>
-                <br>
-            </li>
-        </ul>
-    </div>
-</div>
+
 <!--   Core JS Files   -->
 <script src="{{asset('assets/js/core/jquery.min.js')}}"></script>
 <script src="{{asset('assets/js/core/popper.min.js')}}"></script>
@@ -494,9 +403,7 @@ The above copyright notice and this permission notice shall be included in all c
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js
         md.initDashboardPageCharts();
-
     });
 </script>
 </body>
-
 </html>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view ('Produit.create');
+        $categories = Category::all();
+        return view ('Produit.create',compact('categories'));
     }
 
     /**
@@ -39,9 +41,12 @@ class ProductController extends Controller
     {
         Product::create(['Name'=>$request->Name,'description'=>$request->description,
             'price'=>$request->price,
-            'stock'=>$request->stock]);
-        //ou bien Produit::create($request->all());
+            'stock'=>$request->stock,
+            'category_id'=>$request->category
+        ]);
 
+
+        //ou bien Produit::create($request->all());
 
         return redirect()->route('produits.index');
     }
@@ -52,8 +57,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
+        $product=Product::find($id);
+       //$category = $product->category->Name;
+
         return view('Produit.show',compact('product'));
     }
 
@@ -63,21 +71,26 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+       $product=Product::find($id);
+
+       return view('Produit.edit',compact('product'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request,$id)
     {
-        //
+        $product=['Name'=>$request->Name,'description'=>$request->description,
+            'price'=>$request->price,
+            'stock'=>$request->stock];
+        Product::whereId($id)->update($product);
+        return redirect()->route('produits.index');
     }
 
     /**
@@ -86,8 +99,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
+        return redirect()->route('produits.index');
     }
 }
