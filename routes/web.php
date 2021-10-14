@@ -23,3 +23,4 @@ Route::get('/admin', function () {
 })->name('admin');
 Route::resource('produits', ProductController::class);
 Route::resource('categories', \App\Http\Controllers\CategoryController::class);
+Route::resource('shops', \App\Http\Controllers\ShopController::class);

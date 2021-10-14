@@ -17,10 +17,12 @@ class CategoryTableSeeder extends Seeder
         DB::table('categories')->insert([
             [
              'Name' => 'cat1',
+              'product_id' =>1
 
             ],
             [
                 'Name' => 'cat2',
+                'product_id' =>2
 
             ],
         ]);

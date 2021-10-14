@@ -73,6 +73,19 @@ The above copyright notice and this permission notice shall be included in all c
                         <p>Ajouter une catégorie</p>
                     </a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ route('shops.index')}}">
+                        <i class="material-icons">library_books</i>
+                        <p>Liste des boutiques</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ route('shops.create')}}">
+                        <i class="material-icons">library_books</i>
+                        <p>Créer une boutique</p>
+                    </a>
+                </li>
+
             </ul>
         </div>
     </div>

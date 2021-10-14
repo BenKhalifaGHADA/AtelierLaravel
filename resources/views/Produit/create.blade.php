@@ -9,6 +9,7 @@
                     <h4 class="card-title ">Ajouter un produit</h4>
                 </div>
                 <div class="card-body">
+
                     <form method="post" action="{{ route('produits.store') }}">
                         @csrf
                         <div class="form-group">
